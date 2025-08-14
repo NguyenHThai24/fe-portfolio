@@ -1,0 +1,102 @@
+header {
+  height: 100vh;
+  padding-top: 3rem;
+  overflow: hidden;
+}
+
+.header__container {
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+/* CTA  */
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+/* HEADER SOCIALS */
+.header__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+  font-size: 1.5rem;
+}
+
+.header__socials::after {
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background: var(--color-primary);
+}
+
+/* ME  */
+.me {
+  width: 40rem;
+  height: auto;
+  margin: 3rem auto;
+  border-radius: 12rem 12rem 0 0;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* SCROLL DOWN */
+.scroll__down {
+  position: absolute;
+  right: -4rem;
+  bottom: 5rem;
+  transform: rotate(90deg);
+  font-weight: 300;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.scroll__down-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  animation: animation 2s infinite ease-in-out;
+}
+
+@keyframes animation {
+  0%,
+  100% {
+    transform: translateY(30px);
+    rotate: 90deg;
+  }
+
+  50% {
+    transform: translateY(5px);
+    rotate: 90deg;
+  }
+}
+
+/* MEDIA QUERIES (MEDIUM DEVICES) */
+@media screen and (max-width: 1024px) {
+  header {
+    height: 90vh;
+  }
+}
+
+/* MEDIA QUERIES (SMALL DEVICES) */
+@media screen and (max-width: 600px) {
+  header {
+    height: 100vh;
+  }
+
+  .header__socials,
+  .scroll__down {
+    display: none;
+  }
+}

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+/* Hiệu ứng chạy màu */
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background: linear-gradient(90deg, #ff6d05, #00ccff);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  animation: gradientMove 3s linear infinite alternate;
+}
+
+/* end hiệu ứng chạy màu */
