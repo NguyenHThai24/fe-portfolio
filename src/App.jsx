@@ -20,9 +20,10 @@ const App = () => {
           display: "flex",
           alignItems: "center",
           position: "fixed",
-          top: "5px",
+          // top: "px",
           left: "12px",
           zIndex: 999,
+          gap: "0.3rem",
         }}
       >
         <img
@@ -34,8 +35,8 @@ const App = () => {
         <h1
           className="animate-gradient"
           style={{
-            fontFamily: '"Pacifico", cursive',
-            fontWeight: 700,
+            fontWeight: 900,
+            fontSize: "3.2rem",
           }}
         >
           Portfolio

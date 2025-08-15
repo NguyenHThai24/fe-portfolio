@@ -1,6 +1,7 @@
 import React from "react";
 import "./portfolio.css";
 import GITHUB from "../../assets/github.png";
+import { PiGithubLogoBold } from "react-icons/pi";
 
 const Portfolio = () => {
   const data = [
@@ -63,7 +64,7 @@ const Portfolio = () => {
               <h3>{title}</h3>
               <div className="portfolio__item-cta">
                 <a href={github} className="btn" target="_blank">
-                  Github
+                  <PiGithubLogoBold size={"1.2rem"} /> Github
                 </a>
                 <a href={demo} className="btn btn-primary" target="_blank">
                   Live Demo

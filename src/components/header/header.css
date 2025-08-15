@@ -18,6 +18,28 @@ header {
   justify-content: center;
 }
 
+.cta__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta__btn-icon {
+  font-size: 1rem;
+  animation: animation__download 2s infinite ease-in-out;
+}
+
+@keyframes animation__download {
+  0%,
+  100% {
+    transform: translateY(-5px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+}
+
 /* HEADER SOCIALS */
 .header__socials {
   display: flex;
