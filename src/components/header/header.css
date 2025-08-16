@@ -10,6 +10,17 @@ header {
   position: relative;
 }
 
+.text-name {
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--color-orange), var(--color-primary));
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  animation: gradientMove 3s linear infinite alternate;
+}
+
 /* CTA  */
 .cta {
   margin-top: 2.5rem;
@@ -61,12 +72,34 @@ header {
 
 /* ME  */
 .me {
-  width: 40rem;
-  height: auto;
-  margin: 3rem auto;
-  border-radius: 12rem 12rem 0 0;
-  overflow: hidden;
+  position: relative;
+  width: 30rem;
+  margin: 2rem auto;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.me__bg-img {
+  position: absolute;
+  width: 35rem;
+  height: 35rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    0deg,
+    var(--color-bg),
+    var(--color-primary-variant)
+  );
+  z-index: 1; /* nền dưới */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.me__avatar {
+  position: relative;
+  z-index: 2; /* ảnh nổi lên trên */
+  height: auto;
+  border-radius: 50%;
 }
 
 /* SCROLL DOWN */
