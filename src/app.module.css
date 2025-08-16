@@ -1,5 +1,20 @@
-/* Hiệu ứng chạy màu */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 12px;
+  top: 2px;
+  z-index: 999;
+  gap: 0.3rem;
+  cursor: pointer;
+}
 
+.logoImg {
+  width: 50px;
+  height: 50px;
+}
+
+/* Hiệu ứng gradient chữ */
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
@@ -9,7 +24,9 @@
   }
 }
 
-.animate-gradient {
+.animateGradient {
+  font-weight: 900;
+  font-size: 3.2rem;
   background: linear-gradient(90deg, #ff6d05, #00ccff);
   background-size: 200% 200%;
   background-position: 0% 50%;
@@ -19,4 +36,10 @@
   animation: gradientMove 3s linear infinite alternate;
 }
 
-/* end hiệu ứng chạy màu */
+.copyRight {
+  position: fixed;
+  bottom: 2px;
+  right: 10px;
+  font-size: 0.6rem;
+  color: #666;
+}

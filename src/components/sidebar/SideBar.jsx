@@ -1,38 +1,21 @@
 import React from "react";
-import {
-  IoLogoGithub,
-  IoLogoLinkedin,
-  IoLogoTwitter,
-  IoLogoDribbble,
-  IoLogoYoutube,
-  IoLogoInstagram,
-} from "react-icons/io5";
-import styles from "./sidebar.module.css";
-
-const SideBar = () => {
+import styles from "./SideBar.module.css";
+import { BsRocketFill } from "react-icons/bs";
+const SideBar = ({ isOpen, onClose }) => {
   return (
-    <aside className={styles.sidebar}>
-      <nav className={styles.sidebar__nav}>
-        <a href="#" className={styles.sidebar__link} title="GitHub">
-          <IoLogoGithub />
-        </a>
-        <a href="#" className={styles.sidebar__link} title="LinkedIn">
-          <IoLogoLinkedin />
-        </a>
-        <a href="#" className={styles.sidebar__link} title="Twitter">
-          <IoLogoTwitter />
-        </a>
-        <a href="#" className={styles.sidebar__link} title="Dribbble">
-          <IoLogoDribbble />
-        </a>
-        <a href="#" className={styles.sidebar__link} title="YouTube">
-          <IoLogoYoutube />
-        </a>
-        <a href="#" className={styles.sidebar__link} title="Instagram">
-          <IoLogoInstagram />
-        </a>
+    <div className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
+      <div className={styles.line}>
+        <span>Projects</span>
+      </div>
+      {/* Nội dung sidebar */}
+      <nav className={styles.sidebarContent}>
+        <a href="#about">Weather</a> <a href="#about">Weather</a>
       </nav>
-    </aside>
+      {/* Nút đóng */}
+      <button className={styles.closeBtn} onClick={onClose}>
+        <BsRocketFill className={styles.closeBtnIcon} /> Close
+      </button>
+    </div>
   );
 };
 

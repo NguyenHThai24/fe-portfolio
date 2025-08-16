@@ -1,52 +1,31 @@
-import "./app.css";
-import React from "react";
+import React, { useState } from "react";
 import LeafEffect from "@/components/leaf/LeafEffect";
 import MainLayout from "@/layouts/MainLayout";
 import SideBar from "./components/sidebar/SideBar";
+import styles from "./App.module.css";
 
 const App = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
+
   return (
     <>
       <LeafEffect />
-      <SideBar />
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          position: "fixed",
-          // top: "px",
-          left: "12px",
-          zIndex: 999,
-          gap: "0.3rem",
-        }}
-      >
-        <img
-          src="./logo.svg"
-          alt="logo image"
-          style={{ width: "50px", height: "50px" }}
-        />
+      <SideBar isOpen={isSidebarOpen} onClose={toggleSidebar} />
 
-        <h1
-          className="animate-gradient"
-          style={{
-            fontWeight: 900,
-            fontSize: "3.2rem",
-          }}
-        >
-          Portfolio
-        </h1>
+      {/* Logo + Title */}
+      <div className={styles.logoWrapper} onClick={toggleSidebar}>
+        <img src="./logo.svg" alt="logo" className={styles.logoImg} />
+        <h1 className={styles.animateGradient}>Portfolio</h1>
       </div>
+
       <MainLayout />
+
       {/* Copyright */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: "2px",
-          right: "10px",
-          fontSize: "0.6rem",
-          color: "#666",
-        }}
-      >
+      <div className={styles.copyRight}>
         © 2025 Hoang Thai Nguyen — Web Developer
       </div>
     </>
