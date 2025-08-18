@@ -16,12 +16,6 @@ const App = () => {
       <LeafEffect />
       <SideBar isOpen={isSidebarOpen} onClose={toggleSidebar} />
 
-      {/* Logo + Title */}
-      <div className={styles.logoWrapper} onClick={toggleSidebar}>
-        <img src="./logo.svg" alt="logo" className={styles.logoImg} />
-        <h1 className={styles.animateGradient}>Portfolio</h1>
-      </div>
-
       <MainLayout />
 
       {/* Copyright */}

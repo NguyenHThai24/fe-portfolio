@@ -1,60 +1,16 @@
 .nav {
-  width: max-content;
-  display: block;
-  padding: 0.7rem 1.7rem;
-  z-index: 2;
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 2rem;
   display: flex;
-  gap: 0.8rem;
-  border-radius: 3rem;
-  backdrop-filter: blur(15px);
-  border: 1px solid var(--color-primary);
-  background: var(--color-primary-variant);
+  gap: 2rem;
 }
 
 .navLink {
-  background: transparent;
-  padding: 0.8rem;
-  border-radius: 50%;
-  display: flex;
   color: var(--color-white);
-  position: relative; /* để tooltip định vị dựa vào đây */
+  transition: color 0.3s ease;
+  text-decoration: none;
 }
 
-.navLink:hover {
-  background: var(--color-primary);
-}
-
+.navLink:hover,
+.navLink:focus,
 .active {
-  background: #fff;
-  color: var(--color-bg);
-}
-
-.nav:hover .active {
-  color: var(--color-bg);
-}
-
-/* Tooltip */
-.navLink::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 110%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-primary);
-  color: var(--color-white);
-  padding: 0.3rem 0.6rem;
-  font-size: 0.75rem;
-  border-radius: 0.4rem;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-
-.navLink:hover::after {
-  opacity: 1;
+  color: var(--color-primary);
 }

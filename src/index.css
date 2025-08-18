@@ -1,8 +1,14 @@
-/* font heading  */
+/* ===============================
+   1. FONT IMPORTS
+=================================*/
+/* Font heading */
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-/* font body  */
+/* Font body */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* ===============================
+   2. RESET STYLES
+=================================*/
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +19,13 @@
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===============================
+   3. ROOT VARIABLES
+=================================*/
 :root {
   --color-bg: #002333;
   --color-primary: #50cde9;
@@ -27,35 +40,46 @@
   --container-width-sm: 95%;
 }
 
+/* ===============================
+   4. BASE STYLES
+=================================*/
 html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 body {
-  /* font-family: "Poppins", sans-serif; */
   background: var(--color-bg);
-
   color: var(--color-white);
   line-height: 1.7;
+  min-height: 100vh;
 
+  /* Background image (optional) */
   /* background-image: url(../src/assets/background.jpg); */
-  background-size: cover; /* Ảnh phủ hết vùng hiển thị */
-  background-repeat: no-repeat; /* Không lặp lại ảnh */
-  background-position: center; /* Căn giữa ảnh */
-  background-attachment: fixed; /* (Tuỳ chọn) Cố định ảnh khi cuộn */
-  min-height: 100vh; /* Đảm bảo cao ít nhất bằng màn hình */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-/* GENEART STYLES */
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: var(--color-primary);
+  transition: var(--transition);
+}
+
 .container {
   width: var(--container-width-lg);
   margin: 0 auto;
 }
 
+/* ===============================
+   5. TYPOGRAPHY
+=================================*/
 h1,
 h2,
 h3,
@@ -65,37 +89,106 @@ h5 {
   /* font-family: "Raleway", sans-serif; */
 }
 
-h2 {
-  font-weight: 800;
-}
-
 h1 {
   font-size: 2.5rem;
 }
 
+h2 {
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
 section {
-  margin-top: 8rem;
+  padding-top: 4rem;
+}
+
+section:nth-child(odd) {
+}
+
+section:nth-child(even) {
 }
 
 section > h2,
 section > h5 {
   text-align: center;
+}
+
+.text-light {
   color: var(--color-light);
 }
 
-section > h2 {
-  color: var(--color-primary);
-  margin-bottom: 3rem;
-  background: linear-gradient(90deg, var(--color-orange), var(--color-primary));
-  background-size: 200% 200%;
-  background-position: 0% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
-  animation: gradientMove 3s linear infinite alternate;
+/* ===============================
+   6. BUTTONS
+=================================*/
+.btn {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 30rem;
+  cursor: pointer;
+
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  /* Nền gradient động */
+  background: linear-gradient(270deg, var(--color-bg), var(--color-primary));
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+
+  transition: var(--transition);
 }
 
-/* Hiệu ứng gradient chữ */
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(1);
+}
+
+/* Btn Primary */
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  font-size: 1rem;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary);
+  z-index: -1;
+  transition: left 0.7s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background: var(--color-white);
+  color: var(--color-bg);
+  border-color: transparent;
+}
+
+/* ===============================
+   7. ANIMATIONS
+=================================*/
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
@@ -105,44 +198,6 @@ section > h2 {
   }
 }
 
-.text-light {
-  color: var(--color-light);
-}
-
-a {
-  color: var(--color-primary);
-  transition: var(--transition);
-}
-
-.btn {
-  width: max-content;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: var(--color-white);
-  padding: 0.5rem 1rem;
-  border-radius: 0.8rem;
-  cursor: pointer;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  border: 1px solid var(--color-primary);
-
-  /* Nền gradient động */
-  background: linear-gradient(270deg, var(--color-bg), var(--color-primary));
-  background-size: 600% 600%;
-  animation: gradientShift 20s ease infinite;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
-/* Khi click: thu lại nhẹ */
-.btn:active {
-  transform: scale(1);
-}
-
-/* Gradient chuyển động */
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -155,49 +210,9 @@ a {
   }
 }
 
-/* btn primary  */
-.btn-primary {
-  background: var(--color-primary);
-  color: var(--color-bg);
-  font-size: 1rem;
-}
-
-.btn-primary {
-  position: relative;
-  overflow: hidden; /* Ẩn phần pseudo-element tràn ra */
-  z-index: 1;
-}
-
-.btn-primary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%; /* Bắt đầu ngoài bên trái */
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-primary); /* Màu cam */
-  z-index: -1; /* Ở dưới chữ */
-  transition: left 0.7s ease; /* Thời gian chạy */
-}
-
-.btn-primary:hover::before {
-  left: 100%; /* Chạy qua bên phải */
-}
-
-.btn-primary:hover {
-  background: var(--color-white);
-  color: var(--color-bg);
-  border-color: transparent;
-}
-/* end btn primary  */
-
-img {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-}
-
-/* MEDIA QUERIES (MEDIUM DEVICES) */
+/* ===============================
+   8. RESPONSIVE
+=================================*/
 @media screen and (max-width: 1024px) {
   .container {
     width: var(--container-width-md);
@@ -208,8 +223,7 @@ img {
   }
 }
 
-/* MEDIA QUERIES (SMALL DEVICES) */
-@media screen and (max-width: 600) {
+@media screen and (max-width: 600px) {
   .container {
     width: var(--container-width-sm);
   }

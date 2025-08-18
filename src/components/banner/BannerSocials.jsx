@@ -3,9 +3,9 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaDribbbleSquare } from "react-icons/fa";
 
-const HeaderSocials = () => {
+const BannerSocials = () => {
   return (
-    <div className="header__socials">
+    <div className="banner__socials">
       <a href="https://linkedin.com" target="_blank">
         <FaLinkedin />
       </a>
@@ -19,4 +19,4 @@ const HeaderSocials = () => {
   );
 };
 
-export default HeaderSocials;
+export default BannerSocials;

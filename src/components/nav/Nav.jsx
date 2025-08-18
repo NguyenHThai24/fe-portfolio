@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { IoHomeOutline } from "react-icons/io5";
-import { FiUser } from "react-icons/fi";
-import { LuBookMarked, LuMessageSquareMore } from "react-icons/lu";
-import { RiServiceLine } from "react-icons/ri";
 import styles from "./nav.module.css"; // import CSS module
+
+import { useState, useEffect } from "react";
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState("#");
@@ -12,7 +9,7 @@ const Nav = () => {
     const sections = document.querySelectorAll("section");
 
     const onScroll = () => {
-      let current = "#";
+      let current = "#"; // mặc định Home
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
@@ -20,6 +17,12 @@ const Nav = () => {
           current = `#${section.getAttribute("id")}`;
         }
       });
+
+      // Nếu đang ở đầu trang thì ép Home active
+      if (window.scrollY === 0) {
+        current = "#";
+      }
+
       setActiveNav(current);
     };
 
@@ -34,45 +37,40 @@ const Nav = () => {
         className={`${styles.navLink} ${
           activeNav === "#" ? styles.active : ""
         }`}
-        data-tooltip="Home"
       >
-        <IoHomeOutline />
+        Home
       </a>
       <a
         href="#about"
         className={`${styles.navLink} ${
           activeNav === "#about" ? styles.active : ""
         }`}
-        data-tooltip="About Me"
       >
-        <FiUser />
+        About Us
       </a>
       <a
         href="#experience"
         className={`${styles.navLink} ${
           activeNav === "#experience" ? styles.active : ""
         }`}
-        data-tooltip="Experience"
       >
-        <LuBookMarked />
+        Experience
       </a>
       <a
         href="#services"
         className={`${styles.navLink} ${
           activeNav === "#services" ? styles.active : ""
         }`}
-        data-tooltip="Services"
       >
-        <RiServiceLine />
+        Services
       </a>
       <a
         href="#contact"
         className={`${styles.navLink} ${
           activeNav === "#contact" ? styles.active : ""
         }`}
-        data-tooltip="Contact"
       >
-        <LuMessageSquareMore />
+        Contact
       </a>
     </nav>
   );

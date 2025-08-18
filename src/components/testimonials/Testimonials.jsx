@@ -1,8 +1,7 @@
 import "./testimonials.css";
-import React from "react";
 import AVATAR from "../../assets/avatar.svg";
 
-import { Pagination, A11y, Scrollbar } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";

@@ -1,6 +1,6 @@
 import "./about.css";
 import React from "react";
-import ME from "../../assets/card-me.png";
+import ME from "../../assets/me.svg";
 import { BsAwardFill } from "react-icons/bs";
 import { FiUsers } from "react-icons/fi";
 import { LuFolderTree } from "react-icons/lu";
