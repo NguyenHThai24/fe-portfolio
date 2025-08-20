@@ -1,5 +1,4 @@
-.container.contact__container {
-  width: 58%;
+.contact__container {
   display: grid;
   grid-template-columns: 30% 58%;
   gap: 12%;
@@ -53,7 +52,6 @@ form {
   border: 2px solid transparent;
   transition: all 0.3s ease;
   color: var(--color-white);
-  font-size: 0.95rem;
   padding: 1rem;
 }
 
@@ -85,33 +83,26 @@ textarea {
   outline: none;
   font-size: 0.95rem;
   color: var(--color-white);
+  font-family: "Poppins", sans-serif; /* font chung */
+  font-weight: 400; /* ép cho đồng bộ */
 }
 
 /* Placeholder */
 input::placeholder,
 textarea::placeholder {
+  font-family: inherit; /* lấy đúng font từ input */
+  font-size: inherit; /* lấy đúng kích thước */
+  font-weight: inherit; /* lấy đúng độ đậm */
   color: var(--color-white);
-  opacity: 0.8;
-  transition: color 0.3s ease;
-}
-
-/* Khi focus, đổi màu placeholder */
-input:focus::placeholder,
-textarea:focus::placeholder {
-  color: var(--color-primary);
+  opacity: 0.7; /* chỉnh độ mờ nếu muốn */
+  font-style: normal; /* bỏ italic mặc định */
+  font-size: 0.9rem;
 }
 
 /* MEDIA QUERIES (MEDIUM DEVICES) */
 @media screen and (max-width: 1024px) {
-  .container.contact__container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
 }
 
 /* MEDIA QUERIES (SMALL DEVICES) */
 @media screen and (max-width: 600px) {
-  .container.contact__container {
-    width: var(--container-width-sm);
-  }
 }

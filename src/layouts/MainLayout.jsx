@@ -2,8 +2,8 @@ import React from "react";
 import Banner from "@/components/banner/Banner";
 
 import About from "@/components/about/About";
+import Skills from "@/components/skills/Skills";
 import Experience from "@/components/experience/Experience";
-import Services from "@/components/services/Services";
 import Portfolio from "@/components/portfolio/Portfolio";
 import Testimonials from "@/components/testimonials/Testimonials";
 import Contact from "@/components/contact/Contact";
@@ -18,8 +18,8 @@ const MainLayout = () => {
         <Banner />
 
         <About />
+        <Skills />
         <Experience />
-        <Services />
         <Portfolio />
         <Testimonials />
         <Contact />

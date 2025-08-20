@@ -60,52 +60,59 @@ const Portfolio = () => {
       <h5>My Recent Work</h5>
       <h2>Portfolio</h2>
 
-      <Swiper
-        className={styles.portfolioContainer}
-        modules={[Pagination, EffectCoverflow]}
-        effect="coverflow"
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={3}
-        spaceBetween={-150}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 150,
-          modifier: 2,
-          slideShadows: false,
-        }}
-        pagination={{ clickable: true }}
-      >
-        {data.map(({ id, image, title, github, demo }) => (
-          <SwiperSlide key={id} className={styles.portfolioItems}>
-            <div className={styles.portfolioItem}>
-              <div className={styles.portfolioItemImage}>
-                <img src={image} alt={title} />
+      <div className={styles.portfolioWrapper}>
+        <Swiper
+          className={styles.portfolioContainer}
+          modules={[Pagination, EffectCoverflow]}
+          effect="coverflow"
+          grabCursor={true}
+          centeredSlides={true}
+          spaceBetween={0}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 150,
+            modifier: 2,
+            slideShadows: false,
+          }}
+          pagination={{ clickable: true }}
+          loop={true}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            600: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {data.map(({ id, image, title, github, demo }) => (
+            <SwiperSlide key={id} className={styles.portfolioItems}>
+              <div className={styles.portfolioItem}>
+                <div className={styles.portfolioItemImage}>
+                  <img src={image} alt={title} />
+                </div>
+                <h3>{title}</h3>
+                <div className={styles.portfolioItemCta}>
+                  <a
+                    href={github}
+                    className="btn"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <PiGithubLogoBold size={"1.2rem"} /> Github
+                  </a>
+                  <a
+                    href={demo}
+                    className="btn btn-primary"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Live Demo
+                  </a>
+                </div>
               </div>
-              <h3>{title}</h3>
-              <div className={styles.portfolioItemCta}>
-                <a
-                  href={github}
-                  className="btn"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <PiGithubLogoBold size={"1.2rem"} /> Github
-                </a>
-                <a
-                  href={demo}
-                  className="btn btn-primary"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Live Demo
-                </a>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 };

@@ -5,9 +5,9 @@ import Nav from "@/components/nav/Nav";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
+      <a href="#" className={styles.logo}>
         <span>T</span>ahi<span>N</span>uhota
-      </div>
+      </a>
       <Nav />
       <div></div>
     </header>

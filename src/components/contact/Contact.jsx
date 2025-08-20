@@ -1,5 +1,5 @@
-import "./contact.css";
 import React from "react";
+import styles from "./contact.module.css"; // dùng CSS Module
 import { TbMailShare } from "react-icons/tb";
 import { LuUserRoundPen } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -12,32 +12,34 @@ const Contact = () => {
       <h5>Get In Touch</h5>
       <h2>Contact Me</h2>
 
-      <div className="container contact__container">
-        <div className="contact__options">
-          <article className="contact__option">
-            <TbMailShare className="contact__option-icon" />
+      <div className={`container ${styles.contact__container}`}>
+        <div className={styles.contact__options}>
+          <article className={styles.contact__option}>
+            <TbMailShare className={styles.contact__optionIcon} />
             <h4>Email</h4>
             <h5>thaingh2402@gmail.com</h5>
-            <a href="">Send a message</a>
+            <a href="mailto:thaingh2402@gmail.com">Send a message</a>
           </article>
-          <article className="contact__option">
-            <TbMailShare className="contact__option-icon" />
+
+          <article className={styles.contact__option}>
+            <TbMailShare className={styles.contact__optionIcon} />
             <h4>Email</h4>
             <h5>thaingh2402@gmail.com</h5>
-            <a href="">Send a message</a>
+            <a href="mailto:thaingh2402@gmail.com">Send a message</a>
           </article>
-          <article className="contact__option">
-            <TbMailShare className="contact__option-icon" />
+
+          <article className={styles.contact__option}>
+            <TbMailShare className={styles.contact__optionIcon} />
             <h4>Email</h4>
             <h5>thaingh2402@gmail.com</h5>
-            <a href="">Send a message</a>
+            <a href="mailto:thaingh2402@gmail.com">Send a message</a>
           </article>
         </div>
         {/* End contact options  */}
 
         <form action="">
-          <div className="form__input">
-            <LuUserRoundPen className="form__input-icon" />
+          <div className={styles.form__input}>
+            <LuUserRoundPen className={styles.form__inputIcon} />
             <input
               type="text"
               name="name"
@@ -45,8 +47,8 @@ const Contact = () => {
               required
             />
           </div>
-          <div className="form__input">
-            <MdOutlineMailOutline className="form__input-icon" />
+          <div className={styles.form__input}>
+            <MdOutlineMailOutline className={styles.form__inputIcon} />
             <input
               type="email"
               name="email"
@@ -54,8 +56,8 @@ const Contact = () => {
               required
             />
           </div>
-          <div className="form__textarea">
-            <TiMessages className="form__textarea-icon" />
+          <div className={styles.form__textarea}>
+            <TiMessages className={styles.form__textareaIcon} />
             <textarea
               name="message"
               rows={7}

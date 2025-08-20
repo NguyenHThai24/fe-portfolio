@@ -1,7 +1,7 @@
 import React from "react";
-import "./banner.css";
+import styles from "./banner.module.css";
 import CTA from "./CTA";
-import ME from "../../assets/me.svg";
+import ME from "../../assets/me-banner.svg";
 
 import { BsRocketFill } from "react-icons/bs";
 
@@ -9,11 +9,11 @@ const Banner = () => {
   return (
     <section>
       <div className="container">
-        <div className="banner__container">
-          <div className="banner__info">
+        <div className={styles.banner__container}>
+          <div className={styles.banner__info}>
             <h5>NGUYEN HOANG THAI</h5>
-            <h1 className="text__name">HELLO! I'M THAI</h1>
-            <h1 className="text__job">I'M A FRONTEND DEVELOPER</h1>
+            <h1 className={styles.text__name}>HELLO! I'M THAI</h1>
+            <h1 className={styles.text__job}>I'M A FRONTEND DEVELOPER</h1>
             <p>
               I love building websites that not only look good but also bring
               real value to users. With a strong focus on design and
@@ -22,15 +22,16 @@ const Banner = () => {
             </p>
             <CTA />
           </div>
-          <div className="me">
-            <div className="me__bg-img"></div>
-            <img src={ME} alt="avatar me" className="me__avatar" />
+          <div className={styles.me}>
+            <div className={styles.me__hexagon}></div> {/* khung */}
+            <img src={ME} alt="avatar me" className={styles.me__avatar} />{" "}
+            {/* ảnh nổi */}
           </div>
         </div>
 
-        <a href="#contact" className="scroll__down">
+        <a href="#contact" className={styles.scroll__down}>
           Scroll Down
-          <BsRocketFill className="scroll__down-icon" />
+          <BsRocketFill className={styles.scroll__downIcon} />
         </a>
       </div>
     </section>

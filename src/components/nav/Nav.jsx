@@ -49,20 +49,20 @@ const Nav = () => {
         About Us
       </a>
       <a
+        href="#skills"
+        className={`${styles.navLink} ${
+          activeNav === "#skills" ? styles.active : ""
+        }`}
+      >
+        Skills
+      </a>
+      <a
         href="#experience"
         className={`${styles.navLink} ${
           activeNav === "#experience" ? styles.active : ""
         }`}
       >
         Experience
-      </a>
-      <a
-        href="#services"
-        className={`${styles.navLink} ${
-          activeNav === "#services" ? styles.active : ""
-        }`}
-      >
-        Services
       </a>
       <a
         href="#contact"

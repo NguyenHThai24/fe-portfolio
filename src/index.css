@@ -1,10 +1,8 @@
 /* ===============================
    1. FONT IMPORTS
 =================================*/
-/* Font heading */
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-/* Font body */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Font  */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 /* ===============================
    2. RESET STYLES
@@ -29,7 +27,7 @@
 :root {
   --color-bg: #002333;
   --color-primary: #50cde9;
-  --color-primary-variant: rgba(77, 181, 255, 0.5);
+  --color-primary-variant: rgba(77, 181, 255, 0.25); /* 4DB5FFFF */
   --color-white: #fff;
   --color-orange: #ff6d05;
 
@@ -53,8 +51,7 @@ body {
   line-height: 1.7;
   min-height: 100vh;
 
-  /* Background image (optional) */
-  /* background-image: url(../src/assets/background.jpg); */
+  font-family: "Playfair Display", serif;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -72,11 +69,6 @@ a {
   transition: var(--transition);
 }
 
-.container {
-  width: var(--container-width-lg);
-  margin: 0 auto;
-}
-
 /* ===============================
    5. TYPOGRAPHY
 =================================*/
@@ -86,7 +78,6 @@ h3,
 h4,
 h5 {
   font-weight: 600;
-  /* font-family: "Raleway", sans-serif; */
 }
 
 h1 {
@@ -100,14 +91,39 @@ h2 {
   text-align: center;
 }
 
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
 section {
-  padding-top: 4rem;
+  padding: 4rem 0 2rem;
 }
 
+/* section lẻ */
 section:nth-child(odd) {
+  background-image: linear-gradient(
+      to bottom right,
+      var(--color-bg),
+      var(--color-primary-variant)
+    ),
+    url("../src/assets/section-odd.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, right bottom; /* ảnh ở góc dưới phải */
+  background-size: cover, 20rem; /* gradient phủ toàn bộ, ảnh 200px (tùy chỉnh) */
 }
 
+/* section chẵn */
 section:nth-child(even) {
+  background-image: linear-gradient(
+      to top left,
+      var(--color-bg),
+      var(--color-primary-variant)
+    ),
+    url("../src/assets/section-even.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, left bottom; /* ảnh ở góc dưới trái */
+  background-size: cover, 20rem;
 }
 
 section > h2,
@@ -214,21 +230,7 @@ section > h5 {
    8. RESPONSIVE
 =================================*/
 @media screen and (max-width: 1024px) {
-  .container {
-    width: var(--container-width-md);
-  }
-
-  section {
-    margin-top: 6rem;
-  }
 }
 
 @media screen and (max-width: 600px) {
-  .container {
-    width: var(--container-width-sm);
-  }
-
-  section > h2 {
-    margin-top: 2rem;
-  }
 }

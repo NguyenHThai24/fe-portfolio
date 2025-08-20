@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 .header {
-  background: var(--color-bg);
+  background: var(--color-primary-variant);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,7 +11,7 @@
   left: 0;
   width: 100%; /* kéo full ngang */
   z-index: 1000; /* đảm bảo nổi trên các phần khác */
-  border-bottom: 1px solid var(--color-primary);
+  /* border-bottom: 1px solid var(--color-primary); */
 }
 
 .logo {

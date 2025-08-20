@@ -1,0 +1,286 @@
+/* ================== BANNER ================== */
+.banner__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  height: 70vh;
+}
+
+/* ----------- Info (text) ----------- */
+.banner__info {
+  flex: 1;
+  text-align: left;
+}
+
+.banner__info > h5 {
+  width: max-content;
+  background: #021b25;
+  padding: 4px 8px;
+  border-radius: 5px;
+  color: rgb(153, 153, 150);
+  font-size: 0.75rem;
+}
+
+.text__name {
+  /* font-size: 2.5rem; */
+  /* font-weight: bold; */
+}
+
+.text__job {
+  color: var(--color-primary);
+  /* font-size: 1.8rem; */
+  margin: 0.5rem 0 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--color-primary);
+
+  animation: typingCycle 8s steps(22, end) infinite, blink 1s step-end infinite;
+}
+
+.banner__info > p {
+  max-width: 500px;
+  color: #ccc;
+  line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word; /* căn khoảng cách đều hơn */
+}
+
+/* ========== CTA ===============*/
+.cta {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+/* =================== Socials ======================*/
+.banner__socials {
+  border: 1px solid var(--color-primary);
+  border-radius: 5rem;
+  background: var(--color-primary-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.banner__socials > a {
+  color: var(--color-white);
+}
+
+/* ----------- Avatar (me) - Enhanced ----------- */
+.me {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* khung lục giác */
+.me__hexagon {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: var(--color-bg);
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 7% 75%, 7% 25%);
+  z-index: 1;
+  overflow: hidden; /* quan trọng để ảnh không tràn ra ngoài */
+}
+
+/* ảnh cắt theo lục giác luôn */
+.me__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 7% 75%, 7% 25%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* viền trong phát sáng */
+.me__hexagon::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: var(--color-primary);
+  clip-path: inherit; /* dùng lại polygon từ .me__hexagon */
+  z-index: 1;
+}
+
+/* glow bên ngoài */
+.me::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 7% 75%, 7% 25%);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    var(--color-primary),
+    transparent
+  );
+  z-index: -1;
+  animation: pulseGlow 3s ease-in-out infinite alternate;
+}
+
+/* ----------- Scroll down ----------- */
+.scroll__down {
+  position: absolute;
+  right: 0rem;
+  bottom: 5rem;
+  transform: rotate(90deg);
+  font-weight: 300;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.scroll__downIcon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  animation: scrollMove 2s infinite ease-in-out;
+}
+
+/* ================== ANIMATIONS ================== */
+@keyframes typingCycle {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 23ch;
+  }
+  70% {
+    width: 23ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes scrollMove {
+  0%,
+  100% {
+    transform: translateX(0px) rotate(90deg);
+  }
+  50% {
+    transform: translateX(-15px) rotate(90deg);
+  }
+}
+
+@keyframes hexagonFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@keyframes waveMotion {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(6px) translateY(-4px);
+  }
+  50% {
+    transform: translateX(0) translateY(-8px);
+  }
+  75% {
+    transform: translateX(-6px) translateY(-4px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* ================== MEDIA QUERIES ================== */
+@media screen and (max-width: 1024px) {
+  .banner__container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .me__hexagon {
+    width: 280px;
+    height: 280px;
+  }
+
+  .me::after {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .banner__container {
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  /* .text__name {
+    font-size: 2rem;
+  }
+
+  .text__job {
+    font-size: 1.5rem;
+  } */
+
+  .me__hexagon {
+    width: 220px;
+    height: 220px;
+  }
+
+  .me::after {
+    width: 260px;
+    height: 260px;
+  }
+
+  .scroll__down {
+    position: static;
+    transform: none;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+
+  .scroll__downIcon {
+    animation: none;
+  }
+}
