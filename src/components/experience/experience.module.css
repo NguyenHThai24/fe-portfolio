@@ -27,9 +27,9 @@
 
 .experience__list {
   padding: 2rem;
-  background: url(../../assets/flower.svg);
+  background: url(../../assets/electric.svg);
   background-repeat: no-repeat;
-  background-position: bottom center;
+  background-position: center;
   background-size: 10rem;
 }
 

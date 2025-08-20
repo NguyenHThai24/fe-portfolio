@@ -19,6 +19,10 @@
   padding: 2rem;
   border-radius: 2rem;
   user-select: none;
+  background: url(../../assets/flower.svg);
+  background-repeat: no-repeat;
+  background-position: left 20px bottom -25px;
+  background-size: 15rem;
 }
 
 .client__review {

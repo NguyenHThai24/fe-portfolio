@@ -60,7 +60,7 @@ const Portfolio = () => {
       <h5>My Recent Work</h5>
       <h2>Portfolio</h2>
 
-      <div className={styles.portfolioWrapper}>
+      <div className={`container ${styles.portfolioWrapper}`}>
         <Swiper
           className={styles.portfolioContainer}
           modules={[Pagination, EffectCoverflow]}
