@@ -65,6 +65,14 @@ const Nav = () => {
         Experience
       </a>
       <a
+        href="#product"
+        className={`${styles.navLink} ${
+          activeNav === "#product" ? styles.active : ""
+        }`}
+      >
+        Products
+      </a>
+      <a
         href="#contact"
         className={`${styles.navLink} ${
           activeNav === "#contact" ? styles.active : ""

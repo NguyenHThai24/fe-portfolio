@@ -1,45 +1,68 @@
 .skills {
   text-align: center;
-  padding: 2rem 0;
 }
 
-.skills__grid {
+.skills__subtitle {
+}
+
+.skills__heading {
+}
+
+.skills__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   margin-top: 2rem;
+  text-align: left;
 }
 
-.skill__card {
+.skills__column {
+  background: var(--color-bg-variant);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.skills__groupTitle {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.skills__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skills__card {
+  position: relative;
   padding: 1rem;
   border-radius: 10px;
-  text-align: left;
-  position: relative;
-  transition: 0.3s ease;
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
-  background: url(../../assets/bg-card-skill.svg);
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: 5rem;
+  background: url(../../assets/bg-card-skill.svg) no-repeat bottom right / 5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
 }
 
-.skill__card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+.skills__card:hover {
+  transform: translateY(-6px);
 }
 
-.skill__header {
+.skills__header {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.skill__icon {
+.skills__icon {
   font-size: 1.3rem;
 }
 
-.skill__bar {
+.skills__name {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.skills__bar {
   margin-top: 8px;
   background: #333;
   border-radius: 6px;
@@ -47,26 +70,17 @@
   overflow: hidden;
 }
 
-.skill__fill {
+.skills__fill {
   height: 100%;
   border-radius: 6px;
   transition: width 1s ease;
 }
 
-.skill__percent {
+.skills__percent {
   position: absolute;
   top: 12px;
   right: 12px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   color: var(--color-white);
-  /* border: 1px solid var(--color-primary-variant);
-  padding: 0.2rem;
-  border-radius: 50%;
-  height: 2.5rem;
-  width: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--color-primary-variant); */
 }

@@ -27,7 +27,7 @@ const LeafEffect = () => {
       {leafs.map((leaf) => (
         <img
           key={leaf.id}
-          src="/snowflake.svg"
+          src="/leaf.svg"
           alt="leaf"
           className="flying-leaf"
           style={{

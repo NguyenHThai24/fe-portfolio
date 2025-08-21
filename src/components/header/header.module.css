@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 .header {
-  background: var(--color-primary-variant);
+  background: var(--color-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;

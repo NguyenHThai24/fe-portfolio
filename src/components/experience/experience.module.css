@@ -1,65 +1,136 @@
-.experience__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-}
-
-.experience {
-  border-radius: 0 0 2rem 2rem;
-  border: 1px solid var(--color-primary);
-  height: fit-content;
-  transition: var(--transition);
-}
-
-.experience__head {
-  background: var(--color-primary-variant);
-  padding: 0.4rem 1rem;
+.title {
   text-align: center;
-  border-radius: 0 0 2rem 2rem;
-  box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
 }
 
-.experience__head h3 {
-  font-size: 1rem;
-  text-align: center;
-  font-weight: 700;
+/* Timeline container */
+.timeline {
+  position: relative;
+  /* margin: auto; */
+  padding: 0 2rem;
 }
 
-.experience__list {
-  padding: 2rem;
-  background: url(../../assets/electric.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 10rem;
+/* The vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-white);
+  transform: translateX(-50%);
 }
 
-.experience__list li {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 0.8rem;
-  font-weight: 500;
+/* Timeline item wrapper */
+.timelineItem {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
 }
 
-.experience__listIcon {
-  color: var(--color-primary);
-  margin-top: 2px;
+/* Position left */
+.timelineItem.left {
+  left: 0;
+  text-align: right;
 }
 
-.experience__list p {
+/* Position right */
+.timelineItem.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* Marker mặc định */
+.timelineItem::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Marker theo màu box */
+.timelineItem.left.red::before,
+.timelineItem.right.red::before {
+  background: #e74c3c;
+  border: 3px solid #e74c3c;
+}
+
+.timelineItem.left.green::before,
+.timelineItem.right.green::before {
+  background: #2ecc71;
+  border: 3px solid #2ecc71;
+}
+
+.timelineItem.left.blue::before,
+.timelineItem.right.blue::before {
+  background: #3498db;
+  border: 3px solid #3498db;
+}
+
+.timelineItem.left.yellow::before,
+.timelineItem.right.yellow::before {
+  background: #f39c12;
+  border: 3px solid #f39c12;
+}
+
+.timelineItem.left::before {
+  right: -8px;
+}
+
+.timelineItem.right::before {
+  left: -8px;
+}
+
+/* Box content */
+.content {
+  padding: 1rem;
+  border-radius: 6px;
+  color: #fff;
   font-size: 0.9rem;
+  background: var(--color-primary-variant);
 }
 
-/* MEDIA QUERIES */
-@media screen and (max-width: 1024px) {
-  .experience__container {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+.content h3 {
+  margin: 0 0 0.5rem;
+  font-weight: bold;
+}
+
+/* Colors */
+.border__red {
+  border: 1px solid #e74c3c;
+  background: url(../../assets/experience.svg) no-repeat top -1.3rem right / 10rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+.border__green {
+  border: 1px solid #2ecc71;
+  background: url(../../assets/experience.svg) no-repeat top -1.3rem left / 10rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.border__yellow {
+  border: 1px solid #f39c12;
+  background: url(../../assets/experience.svg) no-repeat top -1.3rem right / 10rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 8px;
   }
-}
-
-@media screen and (max-width: 600px) {
-  .experience__container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .timelineItem {
+    width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 0;
+    text-align: left !important;
+  }
+  .timelineItem::before {
+    left: 0;
   }
 }
