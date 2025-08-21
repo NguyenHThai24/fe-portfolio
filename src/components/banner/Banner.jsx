@@ -3,11 +3,9 @@ import styles from "./banner.module.css";
 import CTA from "./CTA";
 import ME from "../../assets/me-banner.svg";
 
-import { BsRocketFill } from "react-icons/bs";
-
 const Banner = () => {
   return (
-    <section>
+    <section id="#">
       <div className="container">
         <div className={styles.banner__container}>
           <div className={styles.banner__info}>
@@ -28,11 +26,6 @@ const Banner = () => {
             {/* ảnh nổi */}
           </div>
         </div>
-
-        <a href="#contact" className={styles.scroll__down}>
-          Scroll Down
-          <BsRocketFill className={styles.scroll__downIcon} />
-        </a>
       </div>
     </section>
   );

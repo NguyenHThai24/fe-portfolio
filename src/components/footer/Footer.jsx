@@ -1,17 +1,17 @@
 import React from "react";
-import "./footer.css";
+import styles from "./footer.module.css";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaSquareTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer>
-      <a href="#" className="footer__logo">
+    <footer className={styles.footer}>
+      <a href="#" className={styles.footer__logo}>
         PORTFOLIO
       </a>
 
-      <ul className="permalinks">
+      <ul className={styles.permalinks}>
         <li>
           <a href="#">Home</a>
         </li>
@@ -35,7 +35,7 @@ const Footer = () => {
         </li>
       </ul>
 
-      <div className="footer__socials">
+      <div className={styles.footer__socials}>
         <a href="https://facebook.com">
           <FaSquareFacebook />
         </a>
@@ -47,7 +47,7 @@ const Footer = () => {
         </a>
       </div>
 
-      <div className="footer__copyright">
+      <div className={styles.footer__copyright}>
         <small>&copy; Tahi Tutorials. All rights reserved.</small>
       </div>
     </footer>

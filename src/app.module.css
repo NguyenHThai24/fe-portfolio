@@ -41,5 +41,5 @@
   bottom: 2px;
   right: 10px;
   font-size: 0.6rem;
-  color: #666;
+  color: var(--color-primary);
 }

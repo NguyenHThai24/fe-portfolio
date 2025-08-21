@@ -50,6 +50,11 @@
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: 6rem;
+  background-color: var(--color-primary-variant);
+}
+
+.about__card:hover {
+  background: transparent;
 }
 
 .about__icon {

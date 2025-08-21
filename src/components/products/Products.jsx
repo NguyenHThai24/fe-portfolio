@@ -14,7 +14,7 @@ const Products = () => {
   const data = [
     {
       id: 1,
-      image: GITHUB,
+      image: tourVN,
       title: "Website 1",
       github: "https://github.com",
       demo: "https://github.com",
@@ -30,7 +30,7 @@ const Products = () => {
     },
     {
       id: 3,
-      image: GITHUB,
+      image: tourVN,
       title: "Website 3",
       github: "https://github.com",
       demo: "https://github.com",
@@ -47,7 +47,7 @@ const Products = () => {
       <h2>My Products</h2>
 
       <div className={`container ${styles.productWrapper}`}>
-        {/* Panel hiển thị chi tiết dự án */}
+        {/* Box chi tiết full section */}
         <div className={styles.detailBox}>
           <h3>{data[activeIndex].title}</h3>
           <p>{data[activeIndex].desc}</p>
@@ -69,40 +69,39 @@ const Products = () => {
               Live Demo
             </a>
           </div>
-        </div>
 
-        {/* Slider hiển thị 1 card */}
-        <div>
-          <Swiper
-            className={styles.portfolioContainer}
-            modules={[Pagination, EffectCoverflow]}
-            effect="coverflow"
-            grabCursor={true}
-            centeredSlides={true}
-            spaceBetween={0}
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 150,
-              modifier: 2,
-              slideShadows: false,
-            }}
-            pagination={{ clickable: true }}
-            loop={true}
-            slidesPerView={1} // 👉 chỉ 1 card
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // 👉 update index
-          >
-            {data.map(({ id, image, title }) => (
-              <SwiperSlide key={id} className={styles.productItems}>
-                <div className={styles.productItem}>
-                  <div className={styles.productItemImage}>
-                    <img src={image} alt={title} />
+          {/* 👉 Swiper nằm bên trong detailBox, góc dưới phải */}
+          <div className={styles.cardSlider}>
+            <Swiper
+              className={styles.portfolioContainer}
+              modules={[Pagination, EffectCoverflow]}
+              effect="coverflow"
+              grabCursor={true}
+              centeredSlides={true}
+              spaceBetween={0}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 150,
+                modifier: 2,
+                slideShadows: false,
+              }}
+              pagination={{ clickable: true }}
+              loop={true}
+              slidesPerView={1}
+              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            >
+              {data.map(({ id, image, title }) => (
+                <SwiperSlide key={id} className={styles.productItems}>
+                  <div className={styles.productItem}>
+                    <div className={styles.productItemImage}>
+                      <img src={image} alt={title} />
+                    </div>
                   </div>
-                  <h3>{title}</h3>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </div>
     </section>

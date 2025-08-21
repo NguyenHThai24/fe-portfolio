@@ -1,6 +1,18 @@
 .nav {
   display: flex;
   gap: 2rem;
+  border: 1px solid white;
+  padding: 0.4rem 3rem;
+
+  position: fixed; /* cố định header */
+  top: 0; /* dính lên trên */
+  left: 50%; /* điểm giữa màn hình */
+  transform: translateX(-50%); /* đẩy ngược lại 50% chiều rộng */
+
+  background: var(--color-bg); /* thêm nền mờ nếu muốn dễ nhìn */
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-top: none;
 }
 
 .navLink {
@@ -11,6 +23,6 @@
 
 .navLink:hover,
 .navLink:focus,
-.active {
+.navLink.active {
   color: var(--color-primary);
 }

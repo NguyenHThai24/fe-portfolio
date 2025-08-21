@@ -29,7 +29,7 @@
   --color-primary: #00d0ff;
   --color-primary-variant: rgba(77, 181, 255, 0.25); /* 4DB5FFFF */
   --color-white: #fff;
-  --color-orange: #ff6d05;
+  --color-orange: #c25d15;
 
   --transition: all 400ms ease;
 
@@ -41,8 +41,12 @@
 /* ===============================
    4. BASE STYLES
 =================================*/
-html {
+html,
+body {
+  height: 100%;
+  scroll-snap-type: y proximity; /* proximity mềm hơn mandatory */
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 body {
@@ -98,6 +102,11 @@ h2 {
 
 section {
   padding: 4rem 0 2rem;
+  min-height: 100vh;
+  /* height: auto; */
+  scroll-snap-align: start;
+  scroll-snap-stop: normal; /* không ép dừng quá gắt */
+  transition: transform 0.3s ease-in-out;
 }
 
 /* section lẻ */
@@ -125,6 +134,19 @@ section:nth-child(even) {
   background-position: center center, left bottom; /* ảnh ở góc dưới trái */
   background-size: cover, 20rem;
 }
+
+/* section cuối */
+/* section:last-of-type {
+  background-image: linear-gradient(
+      to top left,
+      var(--color-bg),
+      var(--color-primary-variant)
+    ),
+    url("../src/assets/section-even.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, left bottom;
+  background-size: cover, 20rem;
+} */
 
 section > h2,
 section > h5 {

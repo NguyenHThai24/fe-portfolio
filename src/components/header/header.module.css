@@ -1,25 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 .header {
-  background: var(--color-bg);
+  /* background: var(--color-bg); */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 4rem;
   position: fixed; /* cố định header */
   top: 0; /* dính lên trên */
   left: 0;
   width: 100%; /* kéo full ngang */
   z-index: 1000; /* đảm bảo nổi trên các phần khác */
-  /* border-bottom: 1px solid var(--color-primary); */
 }
 
 .logo {
   font-family: "Pacifico", cursive;
+  padding: 1rem 2rem;
+  background: radial-gradient(
+    circle at top left,
+    var(--color-bg),
+    var(--color-primary)
+  );
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  /* border: 1px solid var(--color-primary); */
+  border-top: none;
+  margin-left: 0.5rem;
   font-size: 1.5rem;
-  color: var(--color-white); /* màu chữ sáng cho dễ nổi */
-  text-shadow: 2px 2px 4px rgba(80, 205, 233, 1),
-    /* bóng đổ chính */ -1px -1px 0 rgba(80, 205, 233, 0.2); /* highlight nhẹ để nổi khối */
+  color: var(--color-white);
+  text-shadow: 5px 5px 4px rgb(8, 52, 199), 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .logo > span {

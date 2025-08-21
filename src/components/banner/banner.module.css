@@ -131,28 +131,6 @@
   animation: pulseGlow 3s ease-in-out infinite alternate;
 }
 
-/* ----------- Scroll down ----------- */
-.scroll__down {
-  position: absolute;
-  right: 0rem;
-  bottom: 5rem;
-  transform: rotate(90deg);
-  font-weight: 300;
-  font-size: 1.1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.scroll__downIcon {
-  display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  position: relative;
-  animation: scrollMove 2s infinite ease-in-out;
-}
-
 /* ================== ANIMATIONS ================== */
 @keyframes typingCycle {
   0% {
@@ -172,16 +150,6 @@
 @keyframes blink {
   50% {
     border-color: transparent;
-  }
-}
-
-@keyframes scrollMove {
-  0%,
-  100% {
-    transform: translateX(0px) rotate(90deg);
-  }
-  50% {
-    transform: translateX(-15px) rotate(90deg);
   }
 }
 
