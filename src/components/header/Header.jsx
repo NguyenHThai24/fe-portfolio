@@ -5,7 +5,7 @@ import Nav from "@/components/nav/Nav";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <a href="#" className={styles.logo}>
+      <a href="#home" className={styles.logo}>
         <span>T</span>ahi<span>N</span>uhota
       </a>
       <Nav />

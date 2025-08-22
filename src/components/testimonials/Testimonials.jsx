@@ -33,6 +33,7 @@ const data = [
 const Testimonials = () => {
   return (
     <section id="testimonials">
+      <div className="car__right"></div>
       <h5>Review from clients</h5>
       <h2>Testimonials</h2>
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./nav.module.css";
 
 const Nav = () => {
-  const [activeNav, setActiveNav] = useState("#");
+  const [activeNav, setActiveNav] = useState("#home");
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -12,13 +12,13 @@ const Nav = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute("id");
-            setActiveNav(id ? `#${id}` : "#");
+            setActiveNav(id ? `#${id}` : "#home");
           }
         });
       },
       {
         root: null,
-        threshold: 0.6, // ít nhất 60% section vào viewport thì mới active
+        threshold: 0.6,
       }
     );
 
@@ -32,9 +32,9 @@ const Nav = () => {
   return (
     <nav className={styles.nav}>
       <a
-        href="#"
+        href="#home"
         className={`${styles.navLink} ${
-          activeNav === "#" ? styles.active : ""
+          activeNav === "#home" ? styles.active : ""
         }`}
       >
         Home

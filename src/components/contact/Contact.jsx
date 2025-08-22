@@ -9,6 +9,7 @@ import { SiMinutemailer } from "react-icons/si";
 const Contact = () => {
   return (
     <section id="contact">
+      <div className="car__left"></div>
       <h5>Get In Touch</h5>
       <h2>Contact Me</h2>
 

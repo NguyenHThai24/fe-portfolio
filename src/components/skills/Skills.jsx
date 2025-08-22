@@ -103,6 +103,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className={styles.skills}>
+      <div className="car__left"></div>
       <h5 className={styles.skills__subtitle}>My Skills</h5>
       <h2 className={styles.skills__heading}>What Skills I Have</h2>
 

@@ -4,6 +4,7 @@ import styles from "./experience.module.css";
 const Experience = () => {
   return (
     <section id="experience">
+      <div className="car__right"></div>
       <h5 className={styles.title}>Education And Experience</h5>
       <h2>My Journey in Tech</h2>
 

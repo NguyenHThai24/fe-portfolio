@@ -5,7 +5,8 @@ import ME from "../../assets/me-banner.svg";
 
 const Banner = () => {
   return (
-    <section id="#">
+    <section id="home">
+      <div className="car__left"></div>
       <div className="container">
         <div className={styles.banner__container}>
           <div className={styles.banner__info}>

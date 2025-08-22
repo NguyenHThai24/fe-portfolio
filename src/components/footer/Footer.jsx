@@ -7,13 +7,13 @@ import { FaSquareTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <a href="#" className={styles.footer__logo}>
+      <a href="#home" className={styles.footer__logo}>
         PORTFOLIO
       </a>
 
       <ul className={styles.permalinks}>
         <li>
-          <a href="#">Home</a>
+          <a href="#home">Home</a>
         </li>
         <li>
           <a href="#about">About</a>

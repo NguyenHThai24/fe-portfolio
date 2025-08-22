@@ -43,6 +43,7 @@ const Products = () => {
 
   return (
     <section id="product">
+      <div className="car__left"></div>
       <h5>My Recent Work</h5>
       <h2>My Products</h2>
 

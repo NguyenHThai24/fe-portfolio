@@ -8,6 +8,7 @@ import styles from "./about.module.css";
 const About = () => {
   return (
     <section id="about" className={styles.about}>
+      <div className="car__right"></div>
       <h5>Get To Know</h5>
       <h2>About Me</h2>
       <div className={`container ${styles.about__container}`}>
