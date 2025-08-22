@@ -172,7 +172,7 @@ section:nth-child(even) {
   width: 300px;
   height: 150px;
   background: url("../src/assets/car.svg") no-repeat center/contain;
-  animation: carMoveLeft 20s linear infinite;
+  animation: carMoveLeft 25s linear infinite;
 }
 
 /* Đèn pha của xe */
@@ -207,7 +207,7 @@ section:nth-child(even) {
   background: url("../src/assets/car.svg") no-repeat center/contain;
 
   transform: scaleX(-1); /* lật xe */
-  animation: carMoveRight 20s linear infinite;
+  animation: carMoveRight 25s linear infinite;
 }
 
 /* Đèn pha trước xe */

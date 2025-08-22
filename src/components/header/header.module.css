@@ -1,35 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 .header {
-  /* background: var(--color-bg); */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed; /* cố định header */
   top: 0; /* dính lên trên */
   left: 0;
-  width: 100%; /* kéo full ngang */
-  z-index: 1000; /* đảm bảo nổi trên các phần khác */
+  z-index: 1000;
+  background: var(--color-bg);
+  /* box-shadow: inset 0 -5px 10px rgba(255, 255, 255, 0.6); */
+  padding: 0.3rem;
+  width: 100%;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: -2.5rem;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  background: url("../src/assets/grass.svg") repeat-x;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   font-family: "Pacifico", cursive;
-  padding: 0.5rem 1rem;
-  background: radial-gradient(
-    circle at top left,
-    var(--color-bg),
-    var(--color-primary)
-  );
-  border-bottom-right-radius: 2rem;
-  border-bottom-left-radius: 2rem;
-  /* border: 1px solid var(--color-primary); */
-  border-top: none;
-  margin-left: 0.5rem;
   font-size: 1.8rem;
   color: var(--color-white);
-  text-shadow: 5px 5px 4px rgb(8, 52, 199), 5px 5px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgb(8, 247, 255), 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .logo > span {
   /* font-size: 2rem; */
+}
+
+.header__socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* để nó nằm bên phải header */
+  gap: 1.5rem;
+  min-width: 20%;
+}
+
+.header__socials > a {
+  font-size: 1.7rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.header__socialsIcon {
+  cursor: pointer;
+}
+
+.header__socialsIcon:hover {
+  transform: scale(1.3);
 }

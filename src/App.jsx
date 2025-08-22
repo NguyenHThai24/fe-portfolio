@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LeafEffect from "@/components/leaf/LeafEffect";
+// import LeafEffect from "@/components/leaf/LeafEffect";
 import MainLayout from "@/layouts/MainLayout";
 import SideBar from "./components/sidebar/SideBar";
 import styles from "./App.module.css";
@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <>
-      <LeafEffect />
+      {/* <LeafEffect /> */}
       <SideBar isOpen={isSidebarOpen} onClose={toggleSidebar} />
 
       <MainLayout />
