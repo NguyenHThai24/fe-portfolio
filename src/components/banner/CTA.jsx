@@ -9,8 +9,8 @@ const CTA = () => {
       <a href={CV} download className={`btn ${styles.cta__btn}`}>
         Download CV <LuDownload className={styles.cta__btnIcon} />
       </a>
-      <a href="#contact" className="btn btn-primary">
-        Let's Talk
+      <a href="#product" className="btn btn-primary">
+        View Projects
       </a>
     </div>
   );
