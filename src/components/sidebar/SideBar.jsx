@@ -1,20 +1,16 @@
 import React from "react";
-import styles from "./SideBar.module.css";
-import { BsRocketFill } from "react-icons/bs";
-const SideBar = ({ isOpen, onClose }) => {
+import styles from "./sideBar.module.css";
+import { TiWeatherPartlySunny } from "react-icons/ti";
+
+const SideBar = () => {
   return (
-    <div className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
-      <div className={styles.line}>
-        <span>Projects</span>
-      </div>
-      {/* Nội dung sidebar */}
+    <div className={styles.sidebar}>
       <nav className={styles.sidebarContent}>
-        <a href="#about">Weather</a> <a href="#about">Weather</a>
+        <a href="#">
+          <TiWeatherPartlySunny className={styles.icon} />
+          <span className={styles.tooltip}>Weather</span>
+        </a>
       </nav>
-      {/* Nút đóng */}
-      <button className={styles.closeBtn} onClick={onClose}>
-        <BsRocketFill className={styles.closeBtnIcon} /> Close
-      </button>
     </div>
   );
 };

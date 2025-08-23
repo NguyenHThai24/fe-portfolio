@@ -15,11 +15,11 @@
 
 .banner__info > h5 {
   width: max-content;
-  background: #021b25;
+  background: var(--color-bg);
   padding: 4px 8px;
   border-radius: 5px;
-  color: rgb(153, 153, 150);
-  font-size: 0.75rem;
+  color: #ccc;
+  font-size: 1rem;
 }
 
 .text__name {
@@ -29,12 +29,10 @@
 
 .text__job {
   color: var(--color-primary);
-  /* font-size: 1.8rem; */
   margin: 0.5rem 0 1rem;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid var(--color-primary);
-
   animation: typingCycle 8s steps(19, end) infinite, blink 1s step-end infinite;
 }
 

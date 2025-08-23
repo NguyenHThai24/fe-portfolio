@@ -3,7 +3,9 @@ import React from "react";
 import Nav from "@/components/nav/Nav";
 
 //icon
-import { FaGithubSquare, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
+import { PiGithubLogoFill } from "react-icons/pi";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -15,19 +17,19 @@ const Header = () => {
         <Nav />
         <div className={styles.header__socials}>
           <a href="#">
-            <FaGithubSquare
+            <PiGithubLogoFill
               color="white"
               className={styles.header__socialsIcon}
             />
           </a>
           <a href="#">
-            <FaFacebookSquare
+            <FaFacebookF color="white" className={styles.header__socialsIcon} />
+          </a>
+          <a href="#">
+            <FaLinkedinIn
               color="white"
               className={styles.header__socialsIcon}
             />
-          </a>
-          <a href="#">
-            <FaLinkedin color="white" className={styles.header__socialsIcon} />
           </a>
         </div>
       </div>

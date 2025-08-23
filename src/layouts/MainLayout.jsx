@@ -8,6 +8,7 @@ import Testimonials from "@/components/testimonials/Testimonials";
 import Contact from "@/components/contact/Contact";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import SideBar from "../components/sidebar/SideBar";
 
 const MainLayout = () => {
   useEffect(() => {
@@ -44,6 +45,7 @@ const MainLayout = () => {
     <>
       <Header />
       <main>
+        <SideBar />
         <Banner />
         <About />
         <Skills />
