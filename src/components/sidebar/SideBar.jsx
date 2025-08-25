@@ -11,6 +11,7 @@ const SideBar = () => {
           <span className={styles.tooltip}>Weather</span>
         </a>
       </nav>
+      <div></div>
     </div>
   );
 };
