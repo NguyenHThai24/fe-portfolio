@@ -9,6 +9,7 @@ import Contact from "@/components/contact/Contact";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import SideBar from "../components/sidebar/SideBar";
+import Collection from "../components/collection/Collection";
 
 const MainLayout = () => {
   useEffect(() => {
@@ -52,6 +53,7 @@ const MainLayout = () => {
         <Experience />
         <Products />
         <Testimonials />
+        <Collection />
         <Contact />
       </main>
       <Footer />
